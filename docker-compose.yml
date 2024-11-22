@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ci-arch-ui:
+    build: ./ci-arch-ui
+    image: ci-arch-ui
+    container_name: ci-arch-ui
+    ports:
+      - "5000:5000"
+    networks:
+      - net-sys
+
+networks:
+  net-sys:
+    driver: bridge

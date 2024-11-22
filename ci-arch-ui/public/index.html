@@ -1,0 +1,24 @@
+<!-- public/index.html -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Визуализатор графа</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <div id="main">
+        <div id="cy"></div>
+        <button id="toggle-events-log">Скрыть лог</button>
+        <div id="events-container">
+            <div id="events-log">
+                <h3>Лог событий</h3>
+                <ul id="event-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+    <script type="module" src="/src/app.js"></script>
+</body>
+</html>
