@@ -9,16 +9,49 @@
 </head>
 <body>
     <div id="main">
+        <!-- Резайзер между графом и логами -->
+        <div id="resizer-right"></div>
+
+        <!-- Область графа -->
         <div id="cy"></div>
-        <button id="toggle-events-log">Скрыть лог</button>
-        <div id="events-container">
-            <div id="events-log">
-                <h3>Лог событий</h3>
-                <ul id="event-list"></ul>
+
+        <!-- Правый блок логов с переключателями -->
+        <div id="logs-container">
+            <div id="logs-header">
+                <button id="show-queue" class="active">Очередь</button>
+                <button id="show-history">История</button>
+            </div>
+            <div id="logs-content">
+                <!-- Очередь событий -->
+                <div id="queue-logs" class="logs-section">
+                    <ul id="current-event-list"></ul>
+                </div>
+                <!-- История событий -->
+                <div id="history-logs" class="logs-section hidden">
+                    <ul id="completed-event-list"></ul>
+                </div>
             </div>
         </div>
     </div>
+
+    <!-- Контейнер для управления -->
+    <div id="control-panel">
+        <label for="animation-speed">Скорость анимации:</label>
+        <input type="range" id="animation-speed" min="400" max="2000" step="100" value="800">
+
+        <label for="animation-mode">Режим анимации:</label>
+        <select id="animation-mode">
+            <option value="auto">Авто</option>
+            <option value="sequential">Последовательно</option>
+        </select>
+
+        <label for="zoom-slider">Zoom:</label>
+        <input type="range" id="zoom-slider" min="0.5" max="2" step="0.1" value="1">
+    </div>
+
+    <!-- Подключение Cytoscape.js -->
     <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+    <!-- Ваш скрипт приложения -->
     <script type="module" src="/src/app.js"></script>
 </body>
 </html>
